@@ -1,0 +1,36 @@
+{
+  "apiName": "Todo Fut Booking API",
+  "endpoint": {
+    "method": "POST",
+    "path": "/api/bookings",
+    "contentType": "application/json"
+  },
+  "requestBody": {
+    "contactName": "Parent or contact name. Required. Max 80 characters.",
+    "playerName": "Player name. Required. Max 80 characters.",
+    "phone": "Phone number. Required. Allows numbers, spaces, +, parentheses, periods, and dashes. Max 20 characters.",
+    "email": "Email address. Required. Max 120 characters.",
+    "playerAgeGroup": "Selected age group. Required.",
+    "sessionType": "Selected session type. Required.",
+    "preferredDate": "Preferred training date in YYYY-MM-DD format. Required. Cannot be in the past.",
+    "preferredTime": "Selected preferred time window. Required.",
+    "trainingGoals": "Optional training goals or notes. Max 600 characters.",
+    "bookingConsent": "Boolean. Must be true.",
+    "website": "Hidden honeypot spam field. Should be empty if included."
+  },
+  "successResponse": {
+    "success": true,
+    "message": "Booking request received.",
+    "bookingId": "Supabase row id"
+  },
+  "errorResponse": {
+    "success": false,
+    "message": "Friendly user-facing error message.",
+    "errors": [
+      {
+        "field": "email",
+        "message": "Enter a valid email address."
+      }
+    ]
+  }
+}
